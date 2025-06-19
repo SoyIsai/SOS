@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protocolo de Emergencia | SOS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="protocolos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="assets/logo-sos.png" alt="Logo SOS" class="logo" />
+            <span class="app-name">SOS</span>
+        </div>
+        <div class="burger-menu" id="burgerMenu"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#como-funciona">¿Cómo funciona?</a></li>
+            <li><a href="protocolos.html" class="active">Protocolos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#descargar" class="btn-download">Descargar App</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="protocol-header">
+        <div class="protocol-breadcrumb">
+            <a href="index.html">Inicio</a> &gt; <span>Terremoto</span>
+        </div>
+        <h1>Protocolo: Terremoto</h1>
+        <p class="protocol-location"><i class="fas fa-location-dot"></i> Edificio A, Piso 3</p>
+    </header>
+
+    <!-- Protocolo -->
+    <section class="protocol-content">
+        <div class="protocol-steps">
+            <article class="step">
+                <div class="step-number">1</div>
+                <h3>Mantén la calma</h3>
+                <p>Evita correr o gritar. Refúgiate bajo muebles resistentes o junto a muros estructurales.</p>
+            </article>
+            <article class="step">
+                <div class="step-number">2</div>
+                <h3>Protege tu cabeza</h3>
+                <p>Cúbrete con tus brazos o cualquier objeto firme. Evita ventanas y objetos que puedan caer.</p>
+                <img src="assets/protect-head.jpg" alt="Protección cabeza" class="step-image" />
+            </article>
+            <article class="step">
+                <div class="step-number">3</div>
+                <h3>Evacúa cuando sea seguro</h3>
+                <p>Al detenerse el sismo, sigue las rutas marcadas hacia la zona segura.</p>
+                <div class="protocol-map">
+                    <img src="assets/evacuation-map.jpg" alt="Mapa de evacuación" />
+                    <a href="#" class="btn-map"><i class="fas fa-download"></i> Descargar mapa</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Emergencia -->
+        <aside class="emergency-panel">
+            <h3><i class="fas fa-exclamation-triangle"></i> ¿Necesitas ayuda inmediata?</h3>
+            <button class="emergency-btn" onclick="confirmEmergency()">
+                <i class="fas fa-phone-alt"></i> Llamar al 911
+            </button>
+            <div class="emergency-contacts">
+                <p>Contactos locales:</p>
+                <ul>
+                    <li><i class="fas fa-hospital"></i> Hospital más cercano: <strong>1.2 km</strong></li>
+                    <li><i class="fas fa-fire-extinguisher"></i> Bomberos: <strong>555-1234</strong></li>
+                </ul>
+            </div>
+        </aside>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SOS</h4>
+                <p>Innovando en seguridad desde 2025.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos de uso</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> C. Amadeo de Saboya, 4 - 3 piso, 46010 Valencia.</p>
+                <p><i class="fas fa-phone"></i> Tel.: (+34) 963395017</p>
+                <p><i class="fas fa-envelope"></i> contacto@sosapp.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 UV - SOS. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        function confirmEmergency() {
+            if (confirm('¿Llamar al servicio de emergencias 911?')) {
+                window.location.href = 'tel:911';
+            }
+        }
+
+        const burgerMenu = document.getElementById('burgerMenu');
+        const navLinks = document.getElementById('navLinks');
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = burgerMenu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>
