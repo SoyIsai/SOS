@@ -1,31 +1,113 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOS - Primeros Auxilios</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOS - Tu seguridad primero</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
 <body>
-    <h1 style="color: red; text-align: center;">SOS - Primeros Auxilios</h1>
-    
-    <h2 style="color: blue;">Terremoto</h2>
-    <ol>
-        <li>Conserva la calma.</li>
-        <li>Aléjate de ventanas.</li>
-        <li>Busca un triángulo de vida (mesas, escritorios).</li>
-    </ol>
-    
-    <h2 style="color: blue;">Herida Cortante</h2>
-    <ol>
-        <li>Lava la herida con agua limpia.</li>
-        <li>Aplica presión con gasa estéril.</li>
-        <li>Cubre con vendaje.</li>
-    </ol>
-    
-    <div style="background: lightblue; padding: 10px; margin-top: 20px;">
-        <h3>Contactos de Emergencia</h3>
-        <p><strong>Cruz Roja:</strong> 065</p>
-        <p><strong>Protección Civil:</strong> 55 1234 5678</p>
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="assets/logo-sos.png" alt="Logo SOS" class="logo" />
+      <span class="app-name">SOS</span>
     </div>
-</body>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+      <li><a href="#protocolos">Protocolos</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#descargar" class="btn-download">Descargar App</a></li>
+    </ul>
+    <div class="burger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>  <!-- Hero Section -->  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Asistencia Inmediata. Vida Segura.</h1>
+      <p class="slogan">Escanea un QR y accede al protocolo correcto sin perder un segundo.</p>
+      <button class="emergency-btn">
+        <i class="fas fa-bell"></i> BOTÓN DE EMERGENCIA
+      </button>
+      <div class="hero-buttons">
+        <a href="#descargar" class="btn-primary">Descargar ahora</a>
+        <a href="#como-funciona" class="btn-secondary">Ver cómo funciona</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/hero-qr.png" alt="Código QR SOS" />
+    </div>
+  </section>  <!-- Sección Cómo funciona -->  <section id="como-funciona" class="how-it-works">
+    <h2>¿Cómo funciona SOS?</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <i class="fas fa-qrcode step-icon"></i>
+        <h3>Encuentra un QR</h3>
+        <p>Colocados en zonas de riesgo. Identifica y actúa.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <i class="fas fa-mobile-screen-button step-icon"></i>
+        <h3>Escanea con SOS</h3>
+        <p>Detecta tu ubicación y tipo de emergencia.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <i class="fas fa-route step-icon"></i>
+        <h3>Recibe instrucciones</h3>
+        <p>Procedimientos validados para protegerte.</p>
+      </div>
+    </div>
+  </section>  <!-- Testimonios -->  <section id="testimonios" class="testimonials">
+    <h2>Historias que inspiran</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>“Gracias a SOS supe qué hacer cuando comenzó el temblor. Me salvó.”</p>
+        <span>– Ana M., CDMX</span>
+      </div>
+      <div class="testimonial">
+        <p>“Pude ayudar a un vecino herido porque tenía el protocolo justo en el celular.”</p>
+        <span>– Jorge R., Medellín</span>
+      </div>
+    </div>
+  </section>  <!-- Footer -->  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>SOS</h4>
+        <p>Emergencia sin incertidumbre. Seguridad sin demoras.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Centro de ayuda</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <p><i class="fas fa-location-dot"></i> C. Amadeo de Saboya, 4 - 3 piso, 46010 Valencia.</p>
+        <p><i class="fas fa-phone"></i> (+34) 963395017</p>
+        <p><i class="fas fa-envelope"></i> contacto@sosapp.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 UV - SOS. Todos los derechos reservados.</p>
+    </div>
+  </footer>  <!-- Script Botón Emergencia -->  <script>
+    document.querySelector(".emergency-btn").addEventListener("click", function () {
+      alert("¡Emergencia activada! Redirigiendo a protocolos inmediatos...");
+      // Aquí se puede integrar localización, redirección o llamada directa.
+    });
+  </script></body>
 </html>
