@@ -1,110 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mapa Conceptual - Clasificación de Costos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      margin: 20px;
-    }
-    .mapa {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .nodo {
-      border: 2px solid #333;
-      border-radius: 15px;
-      padding: 10px 15px;
-      margin: 10px;
-      text-align: center;
-      font-weight: bold;
-      background: #d1e7fd;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-    }
-    .subnodos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 15px 0;
-    }
-    .subnodo {
-      border: 2px solid #666;
-      border-radius: 12px;
-      padding: 8px 12px;
-      margin: 8px;
-      background: #fff9db;
-      font-weight: normal;
-      width: 300px;
-      box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-    }
-    .ejemplos {
-      text-align: left;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-    .linea {
-      width: 2px;
-      background: #333;
-      height: 20px;
-      margin: 0 auto;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Mapa Conceptual - Clasificación de Costos</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .level {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 30px 0;
+  }
+  .box {
+    background: #d1e7fd;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 0 20px;
+    min-width: 150px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+  }
+  /* Conectores verticales */
+  .box::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background: #333;
+  }
+  /* Ocultar conector del nodo raíz */
+  .root::before {
+    display: none;
+  }
+  /* Conectores horizontales entre cajas */
+  .level::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #333;
+  }
+  /* Ocultar línea horizontal del primer nivel */
+  .level.root-level::before {
+    display: none;
+  }
+</style>
 </head>
 <body>
-  <div class="mapa">
+  <div class="tree">
 
-    <!-- NODO PRINCIPAL -->
-    <div class="nodo" style="background:#a5d6a7;">CLASIFICACIÓN DE COSTOS</div>
-
-    <!-- 1. Según la función en que incurren -->
-    <div class="linea"></div>
-    <div class="nodo">1. Según la función en que incurren</div>
-    <div class="subnodos">
-      <div class="subnodo">
-        <b>Producción</b>
-        <div class="ejemplos">
-          • Harina (alimentos)<br>
-          • Mano de obra en línea<br>
-          • Aceite de maquinaria<br>
-          • Envases<br>
-          • Energía eléctrica del taller
-        </div>
-      </div>
-      <div class="subnodo">
-        <b>Administración</b>
-        <div class="ejemplos">
-          • Salario de gerente<br>
-          • Limpieza oficinas<br>
-          • Papelería administrativa<br>
-          • Auditoría<br>
-          • Asesoría legal
-        </div>
-      </div>
-      <div class="subnodo">
-        <b>Ventas / Distribución</b>
-        <div class="ejemplos">
-          • Comisión vendedores<br>
-          • Fletes<br>
-          • Promoción<br>
-          • Alquiler punto de venta<br>
-          • Marketing
-        </div>
-      </div>
-      <div class="subnodo">
-        <b>Financiamiento</b>
-        <div class="ejemplos">
-          • Intereses bancarios<br>
-          • Emisión de bonos<br>
-          • Cartas de crédito<br>
-          • Comisiones bancarias<br>
-          • Penalizaciones
-        </div>
-      </div>
+    <!-- Nivel raíz -->
+    <div class="level root-level">
+      <div class="box root">CLASIFICACIÓN DE COSTOS</div>
     </div>
 
+    <!-- Nivel 1 -->
+    <div class="level">
+      <div class="box">1. Función en que incurren</div>
+      <div class="box">2. Identificación</div>
+      <div class="box">3. Tiempo calculado</div>
+      <div class="box">4. Enfrentados a ingresos</div>
+    </div>
+
+    <!-- Nivel 2 -->
+    <div class="level">
+      <div class="box">Producción<br>+5 ejemplos</div>
+      <div class="box">Administración<br>+5 ejemplos</div>
+      <div class="box">Históricos<br>+5 ejemplos</div>
+      <div class="box">Producto<br>+5 ejemplos</div>
+    </div>
+
+    <!-- Nivel 3 -->
+    <div class="level">
+      <div class="box">Ejemplo A</div>
+      <div class="box">Ejemplo B</div>
+      <div class="box">Ejemplo C</div>
+      <div class="box">Ejemplo D</div>
+    </div>
+
+  </div>
+</body>
+</html>
     <!-- 2. Identificación con actividad -->
     <div class="linea"></div>
     <div class="nodo">2. Identificación con actividad, depto o producto</div>
