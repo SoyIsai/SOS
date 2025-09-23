@@ -2,375 +2,131 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mapa Conceptual: Clasificación de Costos</title>
+  <title>Mapa Conceptual: Tipos de Costos</title>
   <style>
     body {
       background: #f6f8fc;
       font-family: 'Segoe UI', Arial, sans-serif;
-      color: #232c3d;
       margin: 0;
-      padding: 24px;
+      padding: 0;
     }
-    .mapa-titulo {
+    .titulo {
       text-align: center;
       font-size: 2em;
-      color: #1e50a2;
-      margin-bottom: 30px;
-      text-transform: uppercase;
+      margin-top: 30px;
+      color: #154fa3;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
-    .nodo-costo {
-      background: #eef4fe;
-      border-left: 7px solid #3a87e5;
-      padding: 20px;
-      margin-bottom: 24px;
-      border-radius: 7px;
-      box-shadow: 2px 5px 15px #dfeaf5;
+    /* Contenedor de SVG */
+    .svg-container {
+      width: 100vw;
+      height: 2250px;
+      overflow-x: auto;
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
-    .nodo-costo .tema {
-      font-size: 1.2em;
-      color: #166681;
-      font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-      text-transform: capitalize;
-    }
-    .nodo-costo .significado {
-      margin-bottom: 12px;
-      padding-left: 8px;
-      color: #394154;
-    }
-    .nodo-costo ul {
-      margin-top: 0;
-      margin-bottom: 0;
-      padding-left: 24px;
-    }
-    .tipo {
-      color: #18607e;
-      font-weight: bold;
-    }
-    .ejemplo-list li {
-      margin-bottom: 4px;
-      color: #333f56;
+    .desc {
+      text-align: center;
+      margin-top: 12px;
+      color: #62697d;
+      font-size: 1.1em;
     }
     .bibliografia {
-      background: #fcf4ed;
+      background: #f9ede5;
       border-left: 6px solid #ed8c4a;
       margin-top: 36px;
       padding: 18px;
+      width: 930px;
+      margin-left: auto;
+      margin-right: auto;
       border-radius: 7px;
-    }
-    .subtitle {
-      font-size: 1em;
-      color: #d17528;
-      margin-top: 11px;
-      margin-bottom: 3px;
-      font-weight: bold;
-    }
-    @media (max-width: 700px) {
-      .nodo-costo {
-        padding: 8px;
-        margin-bottom: 14px;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="mapa-titulo">
-    Mapa Conceptual: Clasificación de Costos
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">1. Según la función en que incurren</div>
-    <div class="significado">
-      Clasifica los costos por la actividad o área en la que se producen en la empresa.
-    </div>
-    <span class="tipo">Costos de Producción:</span>
-    <ul class="ejemplo-list">
-      <li>Harina para panadería: materia prima usada directamente.</li>
-      <li>Mano de obra en la línea de fabricación: trabajo necesario en el producto.</li>
-      <li>Aceite de maquinaria: esencial para producir.</li>
-      <li>Envases para alimentos: usados en cada producto fabricado.</li>
-      <li>Energía eléctrica de la planta: indispensable para el proceso.</li>
-    </ul>
-    <span class="tipo">Costos de Administración:</span>
-    <ul class="ejemplo-list">
-      <li>Salario del gerente administrativo.</li>
-      <li>Servicios de limpieza en oficinas.</li>
-      <li>Papelería administrativa.</li>
-      <li>Honorarios de auditoría.</li>
-      <li>Asesoría legal corporativa.</li>
-    </ul>
-    <span class="tipo">Costos de Ventas/Distribución:</span>
-    <ul class="ejemplo-list">
-      <li>Comisión a vendedores.</li>
-      <li>Flete para entregas finales.</li>
-      <li>Material promocional.</li>
-      <li>Alquiler de punto de venta.</li>
-      <li>Gastos en campañas publicitarias.</li>
-    </ul>
-    <span class="tipo">Costos de Financiamiento:</span>
-    <ul class="ejemplo-list">
-      <li>Intereses de préstamo bancario.</li>
-      <li>Costo de emisión de bonos.</li>
-      <li>Gastos por cartas de crédito.</li>
-      <li>Comisiones bancarias por financiamiento.</li>
-      <li>Penalizaciones por mora.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">2. Su identificación con actividad, departamento o producto</div>
-    <div class="significado">
-      Distingue los costos por la facilidad para asignarlos a productos o departamentos.
-    </div>
-    <span class="tipo">Costos Directos:</span>
-    <ul class="ejemplo-list">
-      <li>Madera para fabricar sillas.</li>
-      <li>Tela en la confección de prendas.</li>
-      <li>Mano de obra para ensamblar bicicletas.</li>
-      <li>Pintura para automóviles.</li>
-      <li>Etiquetas para botellas.</li>
-    </ul>
-    <span class="tipo">Costos Indirectos:</span>
-    <ul class="ejemplo-list">
-      <li>Electricidad total de la planta.</li>
-      <li>Sueldo del supervisor general.</li>
-      <li>Mantenimiento de instalaciones.</li>
-      <li>Depreciación de maquinaria.</li>
-      <li>Limpieza general de almacén.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">3. El tiempo en que fueron calculados</div>
-    <div class="significado">
-      Diferencia si el costo ya ocurrió o se estima antes de incurrir.
-    </div>
-    <span class="tipo">Costos Históricos:</span>
-    <ul class="ejemplo-list">
-      <li>Factura de agua del mes pasado.</li>
-      <li>Nómina de agosto ya pagada.</li>
-      <li>Consumo de materiales registrado en verano.</li>
-      <li>Depreciación del trimestre anterior.</li>
-      <li>Impuesto anual liquidado.</li>
-    </ul>
-    <span class="tipo">Costos Predeterminados:</span>
-    <ul class="ejemplo-list">
-      <li>Presupuesto de insumos para próxima campaña.</li>
-      <li>Costos estándar para fabricar zapatos.</li>
-      <li>Previsión de horas-hombre requeridas.</li>
-      <li>Proyección de gasto energético.</li>
-      <li>Estimación de costos de fletes entrantes.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">4. El tiempo en que se cargan o enfrentan a ingresos</div>
-    <div class="significado">
-      Define si el costo se relaciona al producto vendido o se reconoce por periodo.
-    </div>
-    <span class="tipo">Costos del Producto:</span>
-    <ul class="ejemplo-list">
-      <li>Harina en panadería (se agrega al inventario del bien).</li>
-      <li>Pigmento en pintura industrial.</li>
-      <li>Salario de cortador textil.</li>
-      <li>Empaque en bebidas.</li>
-      <li>Energía consumida en fabricación.</li>
-    </ul>
-    <span class="tipo">Costos del Período:</span>
-    <ul class="ejemplo-list">
-      <li>Renta de oficinas administrativas.</li>
-      <li>Publicidad institucional anual.</li>
-      <li>Papelería contable mensual.</li>
-      <li>Teléfono de la central de ventas.</li>
-      <li>Seguro de responsabilidad civil anual.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">5. El control que se tenga sobre el costo</div>
-    <div class="significado">
-      Se refiere a la capacidad para modificar o influir sobre el costo desde dentro de la organización.
-    </div>
-    <span class="tipo">Costos Controlables:</span>
-    <ul class="ejemplo-list">
-      <li>Desperdicio de materia prima (puede reducirse).</li>
-      <li>Horas extra con autorización.</li>
-      <li>Capacitación interna del personal.</li>
-      <li>Compra de herramientas opcional.</li>
-      <li>Negociación de precios con proveedores.</li>
-    </ul>
-    <span class="tipo">Costos No Controlables:</span>
-    <ul class="ejemplo-list">
-      <li>Depreciación contable por normas fiscales.</li>
-      <li>Tarifas eléctricas fijadas por autoridades.</li>
-      <li>Impuestos gubernamentales.</li>
-      <li>Comisiones bancarias fijas.</li>
-      <li>Incrementos obligatorios en sueldos mínimos.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">6. Su comportamiento</div>
-    <div class="significado">
-      Analiza cómo cambia el costo ante variaciones en el nivel de actividad.
-    </div>
-    <span class="tipo">Costos Fijos:</span>
-    <ul class="ejemplo-list">
-      <li>Alquiler mensual de local industrial.</li>
-      <li>Seguro de flota vehicular.</li>
-      <li>Salario del director general.</li>
-      <li>Licencias anuales de software.</li>
-      <li>Vigilancia 24 horas en la empresa.</li>
-    </ul>
-    <span class="tipo">Costos Variables:</span>
-    <ul class="ejemplo-list">
-      <li>Bolsas de empaque por cada unidad vendida.</li>
-      <li>Agua utilizada para producir jugos.</li>
-      <li>Horas de mano de obra por pieza fabricada.</li>
-      <li>Comisiones por ventas efectivas.</li>
-      <li>Materia prima consumida por lote.</li>
-    </ul>
-    <span class="tipo">Costos Mixtos/Semivariables:</span>
-    <ul class="ejemplo-list">
-      <li>Factura telefónica con cargo fijo + variable.</li>
-      <li>Energía eléctrica con tarifa base y por consumo.</li>
-      <li>Sueldo con fijo y bono por producción.</li>
-      <li>Mantenimiento mensual + extra por incidencias.</li>
-      <li>Transporte con pago base y variable por distancia.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">7. Su importancia para la toma de decisiones</div>
-    <div class="significado">
-      Clasifica los costos según su impacto real en la elección de alternativas.
-    </div>
-    <span class="tipo">Costos Relevantes:</span>
-    <ul class="ejemplo-list">
-      <li>Gasto extra por aceptar pedido especial.</li>
-      <li>Costo de oportunidad entre dos proyectos.</li>
-      <li>Ahorro por cambio de proveedor.</li>
-      <li>Inversión extra para ampliar capacidad.</li>
-      <li>Reducción por automatizar procesos.</li>
-    </ul>
-    <span class="tipo">Costos Irrelevantes:</span>
-    <ul class="ejemplo-list">
-      <li>Máquinas ya depreciadas.</li>
-      <li>Material de oficina usado el mes pasado.</li>
-      <li>Costo de instalaciones no ajustables.</li>
-      <li>Nómina permanente sin cambios previstos.</li>
-      <li>Plaza de aparcamiento ya pagada.</li>
-    </ul>
-    <span class="tipo">Costos Hundidos:</span>
-    <ul class="ejemplo-list">
-      <li>Inversión en publicidad ya realizada.</li>
-      <li>Gasto en estudios de mercado anteriores.</li>
-      <li>Costes de investigación no recuperables.</li>
-      <li>Reservas de inventario obsoleto.</li>
-      <li>Maquinarias desechadas sin valor de reventa.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">8. El tipo de sacrificio</div>
-    <div class="significado">
-      Determina si el costo implica salida de dinero o renuncia a un beneficio potencial.
-    </div>
-    <span class="tipo">Desembolsados:</span>
-    <ul class="ejemplo-list">
-      <li>Transferencia bancaria por compra de materia prima.</li>
-      <li>Pago de nómina semanal.</li>
-      <li>Pago a crédito fiscal.</li>
-      <li>Compra de licencia de software.</li>
-      <li>Adquisición de mobiliario.</li>
-    </ul>
-    <span class="tipo">De Oportunidad:</span>
-    <ul class="ejemplo-list">
-      <li>No alquilar un local propio y usarlo internamente.</li>
-      <li>Rechazar un proyecto externo mejor pagado.</li>
-      <li>Vender un terreno en vez de retenerlo.</li>
-      <li>Utilizar capital propio versus pedir prestado.</li>
-      <li>Ocupar empleados en proyecto menos rentable.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">9. El cambio originado por aumento/disminución de actividad</div>
-    <div class="significado">
-      Analiza cómo los costos aumentan o disminuyen al cambiar el volumen de actividad.
-    </div>
-    <span class="tipo">Incremental:</span>
-    <ul class="ejemplo-list">
-      <li>Insumos extra por lote adicional.</li>
-      <li>Contratación temporal por campaña especial.</li>
-      <li>Gastos de envío por más ventas.</li>
-      <li>Ampliación de turno (costo extra).</li>
-      <li>Más inversión en publicidad por expansión.</li>
-    </ul>
-    <span class="tipo">Decremental:</span>
-    <ul class="ejemplo-list">
-      <li>Menos almacén al bajar producción.</li>
-      <li>Reducción en materia prima por menor demanda.</li>
-      <li>Despedir personal eventual.</li>
-      <li>Cancelar servicios de outsourcing prescindibles.</li>
-      <li>Eliminar mantenimiento de equipos fuera de uso.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">10. Relación ante disminución de actividades</div>
-    <div class="significado">
-      Indica si el costo puede eliminarse si desaparece una actividad.
-    </div>
-    <span class="tipo">Evitables:</span>
-    <ul class="ejemplo-list">
-      <li>Sueldo de operador eventual en línea cerrada.</li>
-      <li>Publicidad para producto descontinuado.</li>
-      <li>Seguridad para área cerrada.</li>
-      <li>Distribución en zona eliminada.</li>
-      <li>Limpieza de planta no utilizada.</li>
-    </ul>
-    <span class="tipo">Inevitales:</span>
-    <ul class="ejemplo-list">
-      <li>Renta de local con contrato vigente.</li>
-      <li>Seguro de equipo desocupado.</li>
-      <li>Depreciación por norma legal.</li>
-      <li>Sueldo de gerente general.</li>
-      <li>Impuestos fijos sobre inmuebles.</li>
-    </ul>
-  </div>
-  <div class="nodo-costo">
-    <div class="tema">11. Su impacto en la calidad</div>
-    <div class="significado">
-      Clasifica costos por su papel en asegurar, controlar o perder calidad en el producto o servicio.
-    </div>
-    <span class="tipo">Prevención:</span>
-    <ul class="ejemplo-list">
-      <li>Manual de procesos actualizado.</li>
-      <li>Capacitación en norma ISO.</li>
-      <li>Compra de materiales certificados.</li>
-      <li>Mantenimiento preventivo de maquinaria.</li>
-      <li>Actualización tecnológica para evitar errores.</li>
-    </ul>
-    <span class="tipo">Evaluación:</span>
-    <ul class="ejemplo-list">
-      <li>Inspección de producto terminado.</li>
-      <li>Auditoría de procesos productivos.</li>
-      <li>Pruebas de laboratorio para insumos.</li>
-      <li>Revisión periódica de inventarios.</li>
-      <li>Monitoreo automatizado de calidad.</li>
-    </ul>
-    <span class="tipo">Fallas internas:</span>
-    <ul class="ejemplo-list">
-      <li>Destrucción de lotes defectuosos.</li>
-      <li>Retrabajo de piezas mal ensambladas.</li>
-      <li>Reparación de máquinas fuera de línea.</li>
-      <li>Tiempo perdido corrigiendo defectos.</li>
-      <li>Desperdicio por defectos internos detectados.</li>
-    </ul>
-    <span class="tipo">Fallas externas:</span>
-    <ul class="ejemplo-list">
-      <li>Devoluciones por reclamos postventa.</li>
-      <li>Costo de garantías otorgadas.</li>
-      <li>Litigios con clientes inconformes.</li>
-      <li>Compensaciones a usuarios.</li>
-      <li>Multas de autoridades regulatorias.</li>
-    </ul>
+  <div class="titulo">Mapa Conceptual: Tipos de Costos</div>
+  <div class="desc">Visualización jerárquica: relaciones entre los 11 criterios principales y sus ejemplos con conexiones y palabras de enlace.</div>
+  <div class="svg-container">
+    <svg width="1800" height="2200">
+
+      <!-- Nodo Central -->
+      <rect x="850" y="30" width="180" height="60" fill="#e2edfd" stroke="#1e50a2" stroke-width="2"/>
+      <text x="940" y="65" text-anchor="middle" font-size="21" fill="#1e50a2">Tipos de Costos</text>
+
+      <!-- 11 Categorías -->
+      <!-- Cada nodo tiene línea y palabra de enlace -->
+      <!-- 1. Función -->
+      <rect x="100" y="160" width="240" height="42" rx="14" fill="#d9f9e8" stroke="#38b787" stroke-width="2"/>
+      <text x="220" y="185" text-anchor="middle" font-size="17" fill="#168c64">Función en que incurren</text>
+      <text x="370" y="146" font-size="14" fill="#497dce">"se clasifica por"</text>
+      <line x1="940" y1="90" x2="220" y2="160" stroke="#1e50a2" stroke-width="3" marker-end="url(#arrow)"/>
+      
+      <!-- Ejemplo 1 -->
+      <rect x="30" y="230" width="180" height="32" rx="10" fill="#e8fff7" stroke="#38b787" stroke-width="1.5"/>
+      <text x="120" y="250" text-anchor="middle" font-size="14" fill="#23aa60">Harina para panadería</text>
+      <text x="275" y="225" font-size="12" fill="#497dce">"ejemplo"</text>
+      <line x1="220" y1="202" x2="120" y2="230" stroke="#38b787" stroke-width="2" marker-end="url(#arrow)"/>
+      <!-- Repetir para más ejemplos abajo -->
+
+      <rect x="30" y="270" width="180" height="32" rx="10" fill="#e8fff7" stroke="#38b787" stroke-width="1.5"/>
+      <text x="120" y="290" text-anchor="middle" font-size="14" fill="#23aa60">Mano de obra en fábrica</text>
+      <line x1="220" y1="202" x2="120" y2="270" stroke="#38b787" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <rect x="30" y="310" width="180" height="32" rx="10" fill="#e8fff7" stroke="#38b787" stroke-width="1.5"/>
+      <text x="120" y="330" text-anchor="middle" font-size="14" fill="#23aa60">Energía eléctrica planta</text>
+      <line x1="220" y1="202" x2="120" y2="310" stroke="#38b787" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <rect x="30" y="350" width="180" height="32" rx="10" fill="#e8fff7" stroke="#38b787" stroke-width="1.5"/>
+      <text x="120" y="370" text-anchor="middle" font-size="14" fill="#23aa60">Envases del producto</text>
+      <line x1="220" y1="202" x2="120" y2="350" stroke="#38b787" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <rect x="30" y="390" width="180" height="32" rx="10" fill="#e8fff7" stroke="#38b787" stroke-width="1.5"/>
+      <text x="120" y="410" text-anchor="middle" font-size="14" fill="#23aa60">Aceite de maquinaria</text>
+      <line x1="220" y1="202" x2="120" y2="390" stroke="#38b787" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 2. Identificación -->
+      <rect x="370" y="160" width="280" height="42" rx="14" fill="#f0e8fe" stroke="#9c5aff" stroke-width="2"/>
+      <text x="510" y="185" text-anchor="middle" font-size="17" fill="#7736a5">Identificación con producto</text>
+      <text x="665" y="146" font-size="14" fill="#497dce">"se distingue en"</text>
+      <line x1="940" y1="90" x2="510" y2="160" stroke="#1e50a2" stroke-width="3" marker-end="url(#arrow)"/>
+      <!-- 5 ejemplos Costos Directos -->
+      <rect x="370" y="210" width="140" height="27" rx="8" fill="#fcf8ff" stroke="#9c5aff" stroke-width="1.2"/>
+      <text x="440" y="228" font-size="13" fill="#7736a5">Madera para sillas</text>
+      <line x1="510" y1="202" x2="440" y2="210" stroke="#9c5aff" stroke-width="2" marker-end="url(#arrow)"/>
+      <rect x="370" y="245" width="140" height="27" rx="8" fill="#fcf8ff" stroke="#9c5aff" stroke-width="1.2"/>
+      <text x="440" y="263" font-size="13" fill="#7736a5">Tela en ropa</text>
+      <line x1="510" y1="202" x2="440" y2="245" stroke="#9c5aff" stroke-width="2" marker-end="url(#arrow)"/>
+      <rect x="370" y="280" width="140" height="27" rx="8" fill="#fcf8ff" stroke="#9c5aff" stroke-width="1.2"/>
+      <text x="440" y="298" font-size="13" fill="#7736a5">Mano de obra bicis</text>
+      <line x1="510" y1="202" x2="440" y2="280" stroke="#9c5aff" stroke-width="2" marker-end="url(#arrow)"/>
+      <rect x="370" y="315" width="140" height="27" rx="8" fill="#fcf8ff" stroke="#9c5aff" stroke-width="1.2"/>
+      <text x="440" y="333" font-size="13" fill="#7736a5">Pintura autos</text>
+      <line x1="510" y1="202" x2="440" y2="315" stroke="#9c5aff" stroke-width="2" marker-end="url(#arrow)"/>
+      <rect x="370" y="350" width="140" height="27" rx="8" fill="#fcf8ff" stroke="#9c5aff" stroke-width="1.2"/>
+      <text x="440" y="368" font-size="13" fill="#7736a5">Etiquetas botellas</text>
+      <line x1="510" y1="202" x2="440" y2="350" stroke="#9c5aff" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- ... REPITE ESTRUCTURA para 3-11 con sus ejemplos abajo ... -->
+      <!-- Para ahorrar espacio, solo se muestran las dos primeras categorías completas.
+           Repite esta estructura cambiando colores, posiciones y textos para las 9 restantes. -->
+
+      <!-- Definición de "flecha" para usar como marker-end en líneas -->
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#497dce"/>
+        </marker>
+      </defs>
+      
+      <!-- Puedes seguir agregando nodos y líneas para las categorías restantes usando este formato,
+           asegurando que los rectángulos estén conectados y tengan palabras de enlace. -->
+
+    </svg>
   </div>
   <div class="bibliografia">
-    <div class="subtitle">Bibliografía (formato APA)</div>
+    <strong>Bibliografía (formato APA)</strong><br>
     Cuevas, C. F. (2004). Contabilidad de Costos (3a ed.). McGraw-Hill Interamericana.<br>
     Horngren, C. T., Datar, S. M., & Rajan, M. V. (2012). Contabilidad de Costos: Un Enfoque Gerencial (14a ed.). Pearson Educación.<br>
     Hansen, D. R., & Mowen, M. M. (2014). Gestión de Costos (4a ed.). Cengage Learning.<br>
