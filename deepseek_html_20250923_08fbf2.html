@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Conceptual: Clasificación de Costos</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #34495e;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Estilos del mapa conceptual */
+        .concept-map {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .classification {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+        
+        .classification:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .classification h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 8px;
+        }
+        
+        .subcategory {
+            margin-bottom: 15px;
+        }
+        
+        .subcategory h3 {
+            color: #3498db;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .subcategory h3::before {
+            content: "•";
+            margin-right: 8px;
+            color: #e74c3c;
+            font-size: 1.5rem;
+        }
+        
+        .examples {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 8px;
+        }
+        
+        .example {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .example::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+        }
+        
+        .example-item {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .example-explanation {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 3px;
+            font-size: 0.9rem;
+        }
+        
+        /* Colores diferentes para cada clasificación */
+        .classification:nth-child(1) { border-left-color: #e74c3c; }
+        .classification:nth-child(2) { border-left-color: #9b59b6; }
+        .classification:nth-child(3) { border-left-color: #1abc9c; }
+        .classification:nth-child(4) { border-left-color: #f39c12; }
+        .classification:nth-child(5) { border-left-color: #d35400; }
+        .classification:nth-child(6) { border-left-color: #c0392b; }
+        .classification:nth-child(7) { border-left-color: #16a085; }
+        .classification:nth-child(8) { border-left-color: #8e44ad; }
+        .classification:nth-child(9) { border-left-color: #2c3e50; }
+        .classification:nth-child(10) { border-left-color: #7f8c8d; }
+        .classification:nth-child(11) { border-left-color: #27ae60; }
+        
+        .classification:nth-child(1) h3 { color: #e74c3c; }
+        .classification:nth-child(2) h3 { color: #9b59b6; }
+        .classification:nth-child(3) h3 { color: #1abc9c; }
+        .classification:nth-child(4) h3 { color: #f39c12; }
+        .classification:nth-child(5) h3 { color: #d35400; }
+        .classification:nth-child(6) h3 { color: #c0392b; }
+        .classification:nth-child(7) h3 { color: #16a085; }
+        .classification:nth-child(8) h3 { color: #8e44ad; }
+        .classification:nth-child(9) h3 { color: #2c3e50; }
+        .classification:nth-child(10) h3 { color: #7f8c8d; }
+        .classification:nth-child(11) h3 { color: #27ae60; }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .classification {
+                width: 45%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .classification {
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mapa Conceptual: Clasificación de Costos</h1>
+        
+        <div class="intro">
+            Un mapa conceptual es una herramienta gráfica para representar de forma visual y estructurada las relaciones entre diferentes conceptos e ideas sobre un tema. Este mapa muestra las 11 clasificaciones de costos con ejemplos prácticos para cada una.
+        </div>
+        
+        <div class="concept-map">
+            <!-- Clasificación 1 -->
+            <div class="classification">
+                <h2>1. Según la función en que incurren</h2>
+                
+                <div class="subcategory">
+                    <h3>Costos de producción</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Harina:</span>
+                            <div class="example-explanation">Transformación directa en alimentos</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Mano de obra en línea:</span>
+                            <div class="example-explanation">Participa en la elaboración</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Aceite de maquinaria:</span>
+                            <div class="example-explanation">Necesario para operar equipos</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos de administración</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Salario de gerente administrativo:</span>
+                            <div class="example-explanation">Gestión de la empresa</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Servicios de limpieza en oficinas:</span>
+                            <div class="example-explanation">Mantiene condiciones</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 2 -->
+            <div class="classification">
+                <h2>2. Según identificación con actividad, departamento o producto</h2>
+                
+                <div class="subcategory">
+                    <h3>Costos directos</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Madera para sillas:</span>
+                            <div class="example-explanation">Asignación directa</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Tela en ropa:</span>
+                            <div class="example-explanation">Se vincula a cada producto</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Mano de obra para ensamblar bicicletas:</span>
+                            <div class="example-explanation">Labor directa</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos indirectos</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Electricidad total de la planta:</span>
+                            <div class="example-explanation">Uso compartido</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Sueldo del supervisor general:</span>
+                            <div class="example-explanation">Responsable de varios procesos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 3 -->
+            <div class="classification">
+                <h2>3. Según el tiempo en que fueron calculados</h2>
+                
+                <div class="subcategory">
+                    <h3>Costos históricos</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Factura de agua del mes pasado:</span>
+                            <div class="example-explanation">Ya pagado</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Nómina de agosto:</span>
+                            <div class="example-explanation">Cerrada y pagada</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Uso de materiales este verano:</span>
+                            <div class="example-explanation">Registrado</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos predeterminados</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Presupuesto de insumos para próxima campaña:</span>
+                            <div class="example-explanation">Estimado</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Costos estándar de producción de zapatos:</span>
+                            <div class="example-explanation">Calculado por estudio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 4 -->
+            <div class="classification">
+                <h2>4. Según el tiempo en que se enfrentan a los ingresos</h2>
+                
+                <div class="subcategory">
+                    <h3>Costos del producto</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Harina en panadería:</span>
+                            <div class="example-explanation">Se vende con el pan</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Pigmento para pinturas:</span>
+                            <div class="example-explanation">Forma parte del bien vendido</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Salario del cortador textil:</span>
+                            <div class="example-explanation">Dirigido al producto</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos del período</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Renta de oficinas administrativas:</span>
+                            <div class="example-explanation">No inventariada</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Publicidad institucional anual:</span>
+                            <div class="example-explanation">Gasto del ejercicio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 5 -->
+            <div class="classification">
+                <h2>5. Según el control que se tenga sobre la ocurrencia</h2>
+                
+                <div class="subcategory">
+                    <h3>Costos controlables</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Reducción de desperdicio de materia prima:</span>
+                            <div class="example-explanation">Depende del jefe de área</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Horas extra bajo autorización:</span>
+                            <div class="example-explanation">Decisión de supervisión</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Gastos de capacitación:</span>
+                            <div class="example-explanation">Decisión interna</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos no controlables</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Depreciación por vida útil técnica:</span>
+                            <div class="example-explanation">Norma contable</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Tarifas de electricidad impuestas:</span>
+                            <div class="example-explanation">Externas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 6 -->
+            <div class="classification">
+                <h2>6. Según su comportamiento</h2>
+                
+                <div class="subcategory">
+                    <h3>Costos fijos</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Alquiler mensual de nave industrial:</span>
+                            <div class="example-explanation">Constante por contrato</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Seguro total de flota vehicular:</span>
+                            <div class="example-explanation">Pago fijo</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos variables</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Bolsas de empaque por cada unidad vendida:</span>
+                            <div class="example-explanation">Aumenta con volumen</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Agua para producción de jugos:</span>
+                            <div class="example-explanation">Directo al volumen</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos mixtos</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Factura telefónica comercial:</span>
+                            <div class="example-explanation">Cargo fijo y variable por consumo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 7 -->
+            <div class="classification">
+                <h2>7. Según su importancia para toma de decisiones</h2>
+                
+                <div class="subcategory">
+                    <h3>Costos relevantes</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Gasto extra al aceptar pedido especial:</span>
+                            <div class="example-explanation">Nuevo desembolso</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Costo de oportunidad por elegir un proyecto sobre otro:</span>
+                            <div class="example-explanation">Renuncia a beneficio</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Costos irrelevantes</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Maquinaria adquirida hace 5 años y ya depreciada:</span>
+                            <div class="example-explanation">Hundido</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Gastos de papelería consumidos el mes pasado:</span>
+                            <div class="example-explanation">Ya realizado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 8 -->
+            <div class="classification">
+                <h2>8. Según el tipo de sacrificio</h2>
+                
+                <div class="subcategory">
+                    <h3>Desembolsado</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Transferencia bancaria a proveedor por compra:</span>
+                            <div class="example-explanation">Salida directa de dinero</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Pago de nómina semanal:</span>
+                            <div class="example-explanation">Efectivo desembolsado</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>De oportunidad</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">No alquilar un local propio y usarlo para la empresa:</span>
+                            <div class="example-explanation">Lo dejado de ganar</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Rechazar trabajo freelance por ocuparse en el negocio:</span>
+                            <div class="example-explanation">Ingreso perdido alternativo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 9 -->
+            <div class="classification">
+                <h2>9. Según el cambio por aumento/disminución de actividad</h2>
+                
+                <div class="subcategory">
+                    <h3>Incremental</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Costo de insumos al producir lote extra de productos:</span>
+                            <div class="example-explanation">Solo si aumenta producción</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Contratación temporal por campaña especial:</span>
+                            <div class="example-explanation">Necesario solo si hay incremento</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Decremental</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Reducir almacén y así costos de almacenamiento si baja producción:</span>
+                            <div class="example-explanation">Ahorro por menor actividad</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 10 -->
+            <div class="classification">
+                <h2>10. Según relación ante disminución de actividades</h2>
+                
+                <div class="subcategory">
+                    <h3>Evitable</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Sueldo de operador eventual para línea que cerrará:</span>
+                            <div class="example-explanation">Se puede eliminar</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Campaña publicitaria para producto discontinuado:</span>
+                            <div class="example-explanation">Se puede cancelar</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Inevitable</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Renta del local principal con contrato vigente:</span>
+                            <div class="example-explanation">Continúa aunque baje actividad</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Seguro de equipo aunque esté parado:</span>
+                            <div class="example-explanation">Obligación contractual</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clasificación 11 -->
+            <div class="classification">
+                <h2>11. Según su impacto en la calidad</h2>
+                
+                <div class="subcategory">
+                    <h3>Prevención</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Implementación de manuales de procesos:</span>
+                            <div class="example-explanation">Evita errores</div>
+                        </div>
+                        <div class="example">
+                            <span class="example-item">Inversión en capacitación en normas ISO:</span>
+                            <div class="example-explanation">Mejora calidad</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Evaluación</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Inspección de producto terminado:</span>
+                            <div class="example-explanation">Control de calidad</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Fallas internas</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Destrucción de lotes defectuosos antes de salir a mercado:</span>
+                            <div class="example-explanation">Costo por defectos detectados</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory">
+                    <h3>Fallas externas</h3>
+                    <div class="examples">
+                        <div class="example">
+                            <span class="example-item">Devoluciones por reclamos post-venta:</span>
+                            <div class="example-explanation">Costo por defectos no detectados</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
