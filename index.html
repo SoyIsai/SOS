@@ -2,109 +2,402 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mapa Conceptual: Tipos de Costos</title>
+  <title>Mapa Conceptual - Clasificación de Costos</title>
   <style>
     body {
-      background: #f1f5fa;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 20px;
     }
     .mapa {
-      margin: 40px auto;
-      width: 98vw;
-      max-width: 1600px;
-      position: relative;
-      min-height: 1600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .nodo {
-      position: absolute;
-      background: #eaf1fb;
-      border: 2px solid #287ae3;
-      border-radius: 20px;
-      box-sizing: border-box;
-      padding: 16px 21px;
-      box-shadow: 0 5px 25px #cad6ea54;
-      width: 250px;
-    }
-    /* Colores para subtemas */
-    .nodo.tema1 { border-color: #2cb67a; background: #e3ffe6; }
-    .nodo.tema2 { border-color: #ff7a18; background: #fff0e1;}
-    .nodo.tema3 { border-color: #5141b2; background: #eeeaff;}
-    .nodo.tema4 { border-color: #ffd60a; background: #fffce1;}
-    .nodo.tema5 { border-color: #0077b6; background: #e0f7fa;}
-    .nodo.tema6 { border-color: #8d6e63; background: #e5e1ff;}
-    .nodo.tema7 { border-color: #db2777; background: #ffe1f7;}
-    .nodo.tema8 { border-color: #00b4d8; background: #eafffa;}
-    .nodo.tema9 { border-color: #ff5700; background: #ffece1;}
-    .nodo.tema10 { border-color: #8bc34a; background: #edffed;}
-    .nodo.tema11 { border-color: #a4a4a4; background: #f5f5f5;}
-    .nodo.central {
-      border-color: #154fa3;
-      background: #e2edfd;
-      font-size: 1.25em;
+      border: 2px solid #333;
+      border-radius: 15px;
+      padding: 10px 15px;
+      margin: 10px;
+      text-align: center;
       font-weight: bold;
-      width: 350px;
-      left: 50%;
-      margin-left: -175px;
+      background: #d1e7fd;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
     }
-    .ejemplos { font-size: 0.99em; margin-top:9px; }
-    .enlace {
-      position: absolute;
-      background: #fff5;
+    .subnodos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    .subnodo {
+      border: 2px solid #666;
+      border-radius: 12px;
+      padding: 8px 12px;
+      margin: 8px;
+      background: #fff9db;
+      font-weight: normal;
+      width: 300px;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+    .ejemplos {
+      text-align: left;
       font-size: 14px;
-      color: #287ae3;
-      padding: 1px 6px;
-      border-radius: 8px;
-      font-weight: bold;
-      pointer-events: none;
-      z-index:10;
+      margin-top: 5px;
     }
-    /* Línea */
     .linea {
-      position: absolute;
-      z-index: 1;
-      pointer-events:none;
-    }
-    .bibliografia {
-      margin: 65px auto 30px auto;
-      max-width: 900px;
-      font-size: 0.98em;
-      background: #f6f6e8;
-      border-left: 6px solid #e5b852;
-      border-radius:10px;
-      padding:12px 26px;
+      width: 2px;
+      background: #333;
+      height: 20px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
   <div class="mapa">
-    <!-- Central -->
-    <div class="nodo central" style="top:40px;">Tipos de Costos</div>
-    <!-- Tema 1 -->
-    <div class="nodo tema1" style="top:230px;left:60px;">
-      <b>Función en que incurren</b><br>
-      Producción, administración, venta, financiamiento.<br>
-      <div class="ejemplos">
-        Ejemplos:<br>
-        1. Harina para panadería<br>
-        2. Mano de obra en fábrica<br>
-        3. Publicidad<br>
-        4. Salario administrativo<br>
-        5. Intereses bancarios.
+
+    <!-- NODO PRINCIPAL -->
+    <div class="nodo" style="background:#a5d6a7;">CLASIFICACIÓN DE COSTOS</div>
+
+    <!-- 1. Según la función en que incurren -->
+    <div class="linea"></div>
+    <div class="nodo">1. Según la función en que incurren</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Producción</b>
+        <div class="ejemplos">
+          • Harina (alimentos)<br>
+          • Mano de obra en línea<br>
+          • Aceite de maquinaria<br>
+          • Envases<br>
+          • Energía eléctrica del taller
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Administración</b>
+        <div class="ejemplos">
+          • Salario de gerente<br>
+          • Limpieza oficinas<br>
+          • Papelería administrativa<br>
+          • Auditoría<br>
+          • Asesoría legal
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Ventas / Distribución</b>
+        <div class="ejemplos">
+          • Comisión vendedores<br>
+          • Fletes<br>
+          • Promoción<br>
+          • Alquiler punto de venta<br>
+          • Marketing
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Financiamiento</b>
+        <div class="ejemplos">
+          • Intereses bancarios<br>
+          • Emisión de bonos<br>
+          • Cartas de crédito<br>
+          • Comisiones bancarias<br>
+          • Penalizaciones
+        </div>
       </div>
     </div>
-    <!-- Tema 2 -->
-    <div class="nodo tema2" style="top:230px;left:370px;">
-      <b>Identificación</b><br>
-      Directos/indirectos según producto o área.<br>
-      <div class="ejemplos">
-        Ejemplos:<br>
-        1. Madera para muebles<br>
-        2. Mano de obra directa<br>
-        3. Etiquetas de botellas<br>
-        4. Electricidad general<br>
-        5. Supervisor de planta.
+
+    <!-- 2. Identificación con actividad -->
+    <div class="linea"></div>
+    <div class="nodo">2. Identificación con actividad, depto o producto</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Directos</b>
+        <div class="ejemplos">
+          • Madera sillas<br>
+          • Tela ropa<br>
+          • Mano de obra bicis<br>
+          • Pintura autos<br>
+          • Etiquetas botellas
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Indirectos</b>
+        <div class="ejemplos">
+          • Electricidad planta<br>
+          • Sueldo supervisor<br>
+          • Mantenimiento<br>
+          • Depreciación maquinaria<br>
+          • Limpieza almacén
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Tiempo calculados -->
+    <div class="linea"></div>
+    <div class="nodo">3. Tiempo en que fueron calculados</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Históricos</b>
+        <div class="ejemplos">
+          • Factura agua pasada<br>
+          • Nómina agosto<br>
+          • Materiales verano<br>
+          • Depreciación pasada<br>
+          • Impuesto anual
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Predeterminados</b>
+        <div class="ejemplos">
+          • Presupuesto insumos<br>
+          • Costos estándar<br>
+          • Horas hombre proyectadas<br>
+          • Consumo energía previsto<br>
+          • Gastos fletes estimados
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Tiempo enfrentan ingresos -->
+    <div class="linea"></div>
+    <div class="nodo">4. Tiempo en que se enfrentan a los ingresos</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Del producto</b>
+        <div class="ejemplos">
+          • Harina panadería<br>
+          • Pigmento pinturas<br>
+          • Salario cortador<br>
+          • Empaque bebidas<br>
+          • Energía maquinaria
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Del período</b>
+        <div class="ejemplos">
+          • Renta oficinas<br>
+          • Publicidad anual<br>
+          • Papelería contable<br>
+          • Teléfono ventas<br>
+          • Seguro civil
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Control sobre ocurrencia -->
+    <div class="linea"></div>
+    <div class="nodo">5. Control sobre ocurrencia</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Controlables</b>
+        <div class="ejemplos">
+          • Desperdicio materia<br>
+          • Horas extra<br>
+          • Capacitación<br>
+          • Compra herramientas<br>
+          • Descuento proveedor
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>No controlables</b>
+        <div class="ejemplos">
+          • Depreciación técnica<br>
+          • Tarifas electricidad<br>
+          • Impuestos estatales<br>
+          • Comisiones fijas<br>
+          • Incremento salarial
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Comportamiento -->
+    <div class="linea"></div>
+    <div class="nodo">6. Comportamiento</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Fijos</b>
+        <div class="ejemplos">
+          • Alquiler nave<br>
+          • Seguro flota<br>
+          • Director general<br>
+          • Licencias software<br>
+          • Vigilancia
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Variables</b>
+        <div class="ejemplos">
+          • Bolsas empaque<br>
+          • Agua jugos<br>
+          • Mano de obra<br>
+          • Comisiones ventas<br>
+          • Materia prima
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Mixtos</b>
+        <div class="ejemplos">
+          • Teléfono<br>
+          • Energía eléctrica<br>
+          • Sueldo+bonos<br>
+          • Mantenimiento<br>
+          • Transporte
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Importancia decisiones -->
+    <div class="linea"></div>
+    <div class="nodo">7. Importancia en decisiones</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Relevantes</b>
+        <div class="ejemplos">
+          • Pedido especial<br>
+          • Costo oportunidad<br>
+          • Ahorro proveedor<br>
+          • Inversión ampliar<br>
+          • Reducción personal
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Irrelevantes</b>
+        <div class="ejemplos">
+          • Maquinaria vieja<br>
+          • Papelería pasada<br>
+          • Instalaciones fijas<br>
+          • Nómina permanente<br>
+          • Material ya usado
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Tipo sacrificio -->
+    <div class="linea"></div>
+    <div class="nodo">8. Tipo de sacrificio</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Desembolsado</b>
+        <div class="ejemplos">
+          • Pago proveedor<br>
+          • Nómina semanal<br>
+          • Crédito fiscal<br>
+          • Licencias software<br>
+          • Muebles nuevos
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Oportunidad</b>
+        <div class="ejemplos">
+          • Local propio<br>
+          • Trabajo freelance<br>
+          • Vender terreno<br>
+          • Capital propio<br>
+          • Empleados proyecto
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Cambio por actividad -->
+    <div class="linea"></div>
+    <div class="nodo">9. Cambio por actividad</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Incrementales</b>
+        <div class="ejemplos">
+          • Insumos extra<br>
+          • Contratación temporal<br>
+          • Envío mayor volumen<br>
+          • Turno nocturno<br>
+          • Publicidad mercado
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Decrementales</b>
+        <div class="ejemplos">
+          • Reducir almacén<br>
+          • Menos materia<br>
+          • Despido eventual<br>
+          • Cancelar outsourcing<br>
+          • Eliminar mantenimiento
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Relación ante disminución -->
+    <div class="linea"></div>
+    <div class="nodo">10. Relación ante disminución de actividades</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Evitables</b>
+        <div class="ejemplos">
+          • Sueldo operador<br>
+          • Publicidad producto<br>
+          • Seguridad adicional<br>
+          • Distribución zona<br>
+          • Limpieza planta
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Inevitable</b>
+        <div class="ejemplos">
+          • Renta local<br>
+          • Seguro equipo<br>
+          • Depreciación legal<br>
+          • Gerente general<br>
+          • Impuestos inmuebles
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Impacto en calidad -->
+    <div class="linea"></div>
+    <div class="nodo">11. Impacto en la calidad</div>
+    <div class="subnodos">
+      <div class="subnodo">
+        <b>Prevención</b>
+        <div class="ejemplos">
+          • Manuales procesos<br>
+          • Capacitación ISO<br>
+          • Materiales certificados<br>
+          • Mantenimiento preventivo<br>
+          • Tecnología actualizada
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Evaluación</b>
+        <div class="ejemplos">
+          • Inspección<br>
+          • Auditoría externa<br>
+          • Pruebas laboratorio<br>
+          • Revisión inventarios<br>
+          • Monitoreo calidad
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Fallas internas</b>
+        <div class="ejemplos">
+          • Destrucción lotes<br>
+          • Retrabajo<br>
+          • Reparación máquinas<br>
+          • Tiempo ajustes<br>
+          • Desperdicio control
+        </div>
+      </div>
+      <div class="subnodo">
+        <b>Fallas externas</b>
+        <div class="ejemplos">
+          • Devoluciones<br>
+          • Garantías<br>
+          • Litigios<br>
+          • Compensaciones<br>
+          • Multas
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>        5. Supervisor de planta.
       </div>
     </div>
     <!-- Tema 3 -->
